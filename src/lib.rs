@@ -1,9 +1,5 @@
-use wasm_bindgen::prelude::*;
+/// Speedy protocol for IPC based on QUIC.
+/// Not meant for use in Rust
 
-#[wasm_bindgen]
-pub fn say_hello(i: bool) -> i32 {
-    if i {
-      panic!("kekw");
-    }
-    2 + 2
-}
+pub mod server;
+pub use server::Server;

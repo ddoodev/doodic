@@ -1,7 +1,7 @@
 <img src="./media/speedboat.svg" width="128" style="float: right; border-radius: 30px" />
 <div>
   <h1>Doodic</h1>
-  <p>🚤 Speedy protocol for remote procedure call based on QUIC.</p>
+  <p>🚤 Speedy protocol for IPC based on QUIC.</p>
 </div>
 
 ### 🌟 Features
