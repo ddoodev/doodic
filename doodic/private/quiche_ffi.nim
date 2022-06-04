@@ -190,7 +190,7 @@ proc quiche_config_enable_dgram*(config: QConfigPtr; enabled: bool;
                                 recv_queue_len: csize_t;
                                     send_queue_len: csize_t) {.
     cdecl, importc: "quiche_config_enable_dgram", dynlib: libName.}
-    
+
 proc quiche_config_set_max_connection_window*(config: QConfigPtr; v: uint64) {.
     cdecl, importc: "quiche_config_set_max_connection_window", dynlib: libName.}
 
@@ -201,9 +201,9 @@ proc quiche_config_free*(config: QConfigPtr) {.cdecl,
     importc: "quiche_config_free", dynlib: libName.}
 
 proc quiche_header_info*(buf: cstring; buf_len: csize_t; dcil: csize_t;
-                        version: ptr uint32; `type`: cstring; scid: cstring;
-                        scid_len: ptr csize_t; dcid: cstring;
-                        dcid_len: ptr csize_t; token: cstring;
+                        version: ptr uint32; `type`: ptr uint8; scid: ptr UncheckedArray[uint8];
+                        scid_len: ptr csize_t; dcid: ptr UncheckedArray[uint8];
+                        dcid_len: ptr csize_t; token: ptr UncheckedArray[uint8];
                         token_len: ptr csize_t): cint {.cdecl,
     importc: "quiche_header_info", dynlib: libName.}
 
